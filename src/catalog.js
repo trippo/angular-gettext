@@ -208,7 +208,7 @@ angular.module('gettext').factory('gettextCatalog', function (gettextPlurals, ge
             }
             var stringTable = this.strings[language] || {};
             var contexts = stringTable[string] || {};
-            var plurals = contexts[context || noContext] || [];
+            var plurals = contexts[context] || contexts[noContext] || [];
             return plurals[gettextPlurals(language, n)];
         },
 
